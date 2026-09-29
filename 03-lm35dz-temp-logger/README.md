@@ -27,4 +27,11 @@ See `temp_reader.ino`, `logger.py`, and `plotter.py`.
 See `lm35dz_log_1.csv` for the data.
 See `lm35dz_plot_1.png` for the chart.
 
-Potentiometer provides a voltage to the ADC which returns a value from 0-1023. This is mapped to 0-255 and this new value is used as a brightness value for an LED causing the LED to have variable brightness based on the potentiometer setting.
+The LM35DZ was sampled by the Arduino approximately every
+0.5 seconds. The Arduino converted the ADC reading into a
+temperature estimate and transmitted the measurements over
+Serial.
+
+A Python script collected the readings and saved them to a CSV
+file using Pandas. The resulting data was then plotted using
+Matplotlib.
